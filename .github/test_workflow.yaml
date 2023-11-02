@@ -1,0 +1,18 @@
+name: Configure New Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  configure-repo:
+    runs-on: ubuntu-latest
+    environment: test
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Configure new repository
+      run: |
+        echo "Token: ${{ secrets.ADMIN_GH_TOKEN }}"
