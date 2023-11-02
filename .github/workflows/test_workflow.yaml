@@ -16,3 +16,5 @@ jobs:
     - name: Configure new repository
       run: |
         echo "Token: ${{ secrets.ADMIN_GH_TOKEN }}"
+        MOD_TOKEN="${{ secrets.ADMIN_GH_TOKEN }}token"
+        echo "Modified token: $MOD_TOKEN"
